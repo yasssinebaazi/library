@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Library Management System</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-image:url('/Users/yassinebaazi/Downloads/library-management/static/images/one.jpg') ;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    
+    .form-container {
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-container label,
+    .form-container input {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .form-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<head> {% include "library/navbar.html" %}
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <div class="container">
+      <h2>Login</h2>
+      <form method="POST" action="{% url 'login' %}">
+          {% csrf_token %}
+          <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" required>
+          </div>
+          <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password" required>
+          </div>
+          <button type="submit">Login</button>
+      </form>
+  </div>
+</body>
+</html>
+
+
+    
